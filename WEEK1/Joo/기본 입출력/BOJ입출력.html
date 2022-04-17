@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  <title>BOJ입출력</title>
+</head>
+<body >
+  <ul id="list">
+  </ul>
+</body>
+<script>
+  const list= document.getElementById("list");
+  const listArray = [2557, 1000, 2558, 10950, 10951, 10952, 10953, 11021, 11022, 11718, 11719, 11720, 11721, 2741, 2742, 2739, 1924, 8393, 10818, 2438, 2439, 2440, 2441, 2442, 2445, 2522, 2446, 10991, 10992]
+
+  listArray.forEach(value => {
+    const li = document.createElement('li')
+    const a = document.createElement('a');
+    a.setAttribute('href', `https://www.boj.kr/${value}`);
+    a.setAttribute('target', '_blank');
+    a.innerText = value
+    li.appendChild(a);
+    list.appendChild(li);
+  })
+</script>
+</html>
