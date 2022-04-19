@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  <title>이분/삼분 탐색
+  </title>
+</head>
+<body >
+  <h1>이분/삼분탐색</h1>
+  <ul id="list">
+  </ul>
+</body>
+<script>
+  const list= document.getElementById("list");
+  const listArray = [1654, 2805, 2110, 10815, 10816, 11662]
+
+  listArray.forEach(value => {
+    const li = document.createElement('li')
+    const a = document.createElement('a');
+    a.setAttribute('href', `https://www.boj.kr/${value}`);
+    a.setAttribute('target', '_blank');
+    a.innerText = value
+    li.appendChild(a);
+    list.appendChild(li);
+  })
+</script>
+</html>
