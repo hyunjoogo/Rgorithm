@@ -25,3 +25,5 @@ while start <= end: #이분탐색 알고리즘
         end = mid - 1
         
 print(answer)
+
+# https://claude-u.tistory.com/448
