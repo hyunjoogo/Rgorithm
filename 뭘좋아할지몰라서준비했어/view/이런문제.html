@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+  <title>plzrun님 블로그 글</title>
+  <style>
+    #category {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+    }
+    #category li {
+        list-style: none;
+    }
+    hr {
+      width: 100%;
+    }
+    #list {
+      column-count: 3;
+    }
+  </style>
+</head>
+<body >
+  <h1><a href="../plzrun.html">전체항목</a></h1>
+  <p>1시간 넘어가면 풀던 짓을 그만두고 반드시 AC받은 코드 찾아보기 (설명이 꼭 달려있는 코드를 읽자)</p>
+  <ul id="category">
+    <li><a href="입출력.html">입출력</a></li>
+    <li><a href="dp.html">DP</a></li>
+    <li><a href="이런문제.html">이런문제</a></li>
+    <li><a href="그래프.html">그래프(BFS, DFS)</a></li>
+    <li><a href="이분탐색.html">이분탐색/삼분탐색</a></li>
+    <li><a href="분할정복.html">분할정복</a></li>
+    <li><a href="그리디.html">그리디</a></li>
+    <li><a href="완전탐색.html">완전탐색</a></li>
+  </ul>
+  <hr/>
+  <h2>이런문제</h2>
+
+  <ul id="list">
+  </ul>
+</body>
+<script>
+  const list= document.getElementById("list");
+  const listArray = [2751, 11650, 11651, 10814, 10825, 10989, 11652, 11004, 10828, 9012, 10799, 10845, 10866, 10808, 10809, 10820, 2743, 11655, 10824, 11656, 1406, 1158, 1168, 10430, 2609, 1934, 1850, 9613, 11005, 2745, 1373, 1212, 2089, 11576, 1978, 1929, 6588, 11653, 10872, 1676, 2004]
+
+  listArray.forEach(value => {
+    const li = document.createElement('li')
+    const a = document.createElement('a');
+    a.setAttribute('href', `https://www.boj.kr/${value}`);
+    a.setAttribute('target', '_blank');
+    a.innerText = value
+    li.appendChild(a);
+    list.appendChild(li);
+  })
+</script>
+</html>
