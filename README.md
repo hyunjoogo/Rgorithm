@@ -3,6 +3,10 @@
  -  WEEK1 > 개인폴더명 > 안에 올려주세요.
  -  선 pull 후 commit
 
+# 문제집 페이지 신설
+
+- [plzrun님 블로그 추천 문제집](https://github.com/hyunjoogo/Rgorithm/blob/main/%EB%AD%98%EC%A2%8B%EC%95%84%ED%95%A0%EC%A7%80%EB%AA%B0%EB%9D%BC%EC%84%9C%EC%A4%80%EB%B9%84%ED%96%88%EC%96%B4/plzrun.html)
+
 # 커리큘럼
 
 | 주차 | 주제 |
