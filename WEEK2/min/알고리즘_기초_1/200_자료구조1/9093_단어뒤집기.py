@@ -9,3 +9,5 @@ for _ in range(T):
     for j in range(len(a[i]) - 1, -1, -1):
       print(a[i][j], end='')
     print(' ', end='')
+
+#https://www.acmicpc.net/problem/9093

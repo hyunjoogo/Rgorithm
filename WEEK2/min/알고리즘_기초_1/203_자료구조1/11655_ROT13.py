@@ -23,3 +23,5 @@ for x in s:
     change_str += x
 
 print(change_str)
+
+#https://www.acmicpc.net/problem/11655

@@ -21,3 +21,5 @@ for i in range(len(a)):
     print('YES')
   else:
     print('NO')
+
+#https://www.acmicpc.net/problem/9012

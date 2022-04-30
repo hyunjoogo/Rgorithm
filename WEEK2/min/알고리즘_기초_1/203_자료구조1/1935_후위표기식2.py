@@ -23,3 +23,5 @@ for x in str:
       stack.append(num1 / num2)
 
 print(format(stack[-1], '.2f'))
+
+#https://www.acmicpc.net/problem/1935

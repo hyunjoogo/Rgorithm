@@ -41,3 +41,5 @@ def edit_deque(order):
 for _ in range(n):
   order = list(si().split())
   edit_deque(order)
+
+#https://www.acmicpc.net/problem/10866

@@ -25,3 +25,5 @@ for x in s:
       stack.pop()
 
 print(result)
+
+#https://www.acmicpc.net/problem/1158

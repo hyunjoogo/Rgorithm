@@ -19,3 +19,4 @@ for i in range(n):
 print(*answer)
 
 # 시간초과남 답은 나오지만 다른 방법 생각해봐야할듯
+#https://www.acmicpc.net/problem/17299

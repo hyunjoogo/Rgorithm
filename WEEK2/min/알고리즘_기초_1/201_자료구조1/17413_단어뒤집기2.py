@@ -40,3 +40,5 @@ while last < len(a):
       reverse_str()
   
 print(result_str)
+
+#https://www.acmicpc.net/problem/17413

@@ -37,3 +37,5 @@ for _ in range(n):
 # 정답 출력
 for x in result:
   print(x)
+
+#https://www.acmicpc.net/problem/10828

@@ -17,3 +17,5 @@ while True:
       elif int(x) >= 0 and int(x) <= 9:
         c += 1
   print(a, b, c, d)  
+
+  #https://www.acmicpc.net/problem/10820

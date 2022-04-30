@@ -27,3 +27,5 @@ for x in str:
 while stack:
   result += stack.pop()
 print(result)
+
+#https://www.acmicpc.net/problem/1918

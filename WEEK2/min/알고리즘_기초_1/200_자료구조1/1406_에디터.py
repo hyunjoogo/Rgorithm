@@ -39,3 +39,5 @@ for _ in range(m):
 
 
 print(n)
+
+#https://www.acmicpc.net/problem/1406

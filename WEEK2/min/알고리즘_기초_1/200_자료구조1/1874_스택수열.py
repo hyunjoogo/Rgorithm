@@ -32,3 +32,6 @@ if isFail == False:
 else:
   for x in result:
     print(x)
+
+
+#https://www.acmicpc.net/problem/1874

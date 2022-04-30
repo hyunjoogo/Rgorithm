@@ -11,3 +11,5 @@ for x in s:
   count += 1
 
 print(*result, end=' ')
+
+#https://www.acmicpc.net/problem/10809

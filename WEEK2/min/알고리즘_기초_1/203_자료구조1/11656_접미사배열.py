@@ -12,3 +12,5 @@ result.sort()
 
 for x in result:
   print(x)
+
+#https://www.acmicpc.net/problem/11656

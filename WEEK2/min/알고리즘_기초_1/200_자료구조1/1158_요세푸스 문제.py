@@ -14,3 +14,5 @@ for _ in range(n):
   result.append(str(a.pop(index)))
 
 print("<", ", ".join(result)[:], ">", sep='')
+
+#https://www.acmicpc.net/problem/1158

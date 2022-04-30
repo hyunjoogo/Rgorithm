@@ -9,3 +9,5 @@ for x in s:
   result[a] += 1
 
 print(*result, end=' ')
+
+#https://www.acmicpc.net/problem/10808

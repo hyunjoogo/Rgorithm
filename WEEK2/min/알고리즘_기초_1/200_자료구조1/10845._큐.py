@@ -34,3 +34,5 @@ def edit_queue(order):
 for _ in range(n):
   order = list(si().split())
   edit_queue(order)
+
+#https://www.acmicpc.net/problem/10845
