@@ -9,6 +9,11 @@
 - [![김현주](http://mazassumnida.wtf/api/mini/generate_badge?boj=hyunjoogo)](https://solved.ac/hyunjoogo)
 - [[김민혁]](https://github.com/Miintoo) /
 
+
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/generate_badge?boj={hyunjoogo})](https://solved.ac/{hyunjoogo})
+
+
 # 주의사항
 
 - WEEK? > 개인폴더명 > 안에 올려주세요.
