@@ -5,19 +5,24 @@
 
 # 참여인원 및 기간
 
-- [김현주](https://github.com/hyunjoogo) / [![김현주](http://mazassumnida.wtf/api/mini/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
+- [[김현주]](https://github.com/hyunjoogo) / [![김현주](http://mazassumnida.wtf/api/mini/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
 - [![Solved.ac
 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
-- [김민혁](https://github.com/Miintoo) /
-
-
-
-
+- [[김민혁]](https://github.com/Miintoo) /
 
 # 주의사항
 
 - WEEK? > 개인폴더명 > 안에 올려주세요.
 - 선 pull 후 commit
+
+# 주차별 진행사항
+| 주차 | 주제 |
+| --- | --- |
+| 1 | 파이썬 기본 문법 공부 , Code Up 기초 100제 :: 전체
+동빈나 : 파이썬 문법 부수기
+Code Up 기초 100제 |
+| 2 | 이진탐색 :: 전체 |
+| 3 | 백준 강의 :: 알고리즘 기초 1/2 |
 
 # 참고할 페이지
 
