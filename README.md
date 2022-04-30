@@ -6,8 +6,7 @@
 # 참여인원 및 기간
 
 - [[김현주]](https://github.com/hyunjoogo)
-- [![Solved.ac
-프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj={hyunjoogo})](https://solved.ac/{hyunjoogo})
+- [![김현주](http://mazassumnida.wtf/api/mini/generate_badge?boj=hyunjoogo)](https://solved.ac/hyunjoogo)
 - [[김민혁]](https://github.com/Miintoo) /
 
 # 주의사항
