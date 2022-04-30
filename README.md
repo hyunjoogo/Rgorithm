@@ -5,13 +5,13 @@
 
 # 참여인원 및 기간
 
-- [[김현주]](https://github.com/hyunjoogo)
-- [![김현주](http://mazassumnida.wtf/api/mini/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
+- [[김현주]](https://github.com/hyunjoogo) / [![김현주](http://mazassumnida.wtf/api/mini/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
+- [![Solved.ac
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
 - [[김민혁]](https://github.com/Miintoo) /
 
 
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kiusama)](https://solved.ac/kiusama)
+
 
 
 # 주의사항
