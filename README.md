@@ -1,15 +1,21 @@
+# 어머님은 R고리즘이 싫다고 하셨어
+
+- 지극히 취업과 실력향상을 위한 알고리즘 스터디
+- 참여문의 : hyunjoogo@gmail.com
+
+# 참여인원 및 기간
+
+- [[김현주]](https://github.com/hyunjoogo)
+- [![Solved.ac
+프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj={hyunjoogo})](https://solved.ac/{hyunjoogo})
+- [[김민혁]](https://github.com/Miintoo) /
+
 # 주의사항
 
- -  WEEK? > 개인폴더명 > 안에 올려주세요.
- -  선 pull 후 commit
+- WEEK? > 개인폴더명 > 안에 올려주세요.
+- 선 pull 후 commit
 
-# 문제집 페이지 신설
+# 참고할 페이지
 
 - [plzrun님 블로그 추천 문제집](https://github.com/hyunjoogo/Rgorithm/blob/main/%EB%AD%98%EC%A2%8B%EC%95%84%ED%95%A0%EC%A7%80%EB%AA%B0%EB%9D%BC%EC%84%9C%EC%A4%80%EB%B9%84%ED%96%88%EC%96%B4/plzrun.html)
-
-# 커리큘럼
-
-| 주차 | 주제 |
-| --- | --- |
-| 1 | 파이썬 기본 문법 공부 , Code Up 기초 100제 :: 전체 <br>[동빈나 : 파이썬 문법 부수기](https://youtube.com/playlist?list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC)<br>[Code Up 기초 100제](https://codeup.kr/problemsetsol.php?psid=33)<br>[같이 생각해보아요]()|
-| 2  |  **이진탐색** :: 전체<br>[수업자료 만들예정]()<br>문제집 만들 예정() |
+- [백준 알고리즘 기초 1/2](https://code.plus/course/41)
