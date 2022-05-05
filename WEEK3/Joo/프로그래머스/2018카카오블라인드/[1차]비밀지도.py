@@ -17,3 +17,11 @@ def solution(n, arr1, arr2):
 # 2. 지도1, 지도2의 같은 인덱스의 같은 자리의 문자를 비교하여 하나의 값으로 리턴
 # 2-1. 각 지도list의 같은 인덱스의 같은 인덱스 문자를 비교
 # 2-2. 값 비교 후 바로 공백 또는 # 리턴
+
+# Good Code
+# zip, i | j
+def solution(n, arr1, arr2):
+    answer = []
+    for i, j in zip(arr1, arr2):
+        answer.append(bin(i|j)[2:].zfill(n).replace('1','#').replace('0',' '))
+    return answer
