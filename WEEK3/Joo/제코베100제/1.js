@@ -1,2 +1,10 @@
-const 탑 = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
-const 규칙 = "ABD";
+const 시간표 = ["12:30", "13:20", "14:13"];
+const 현재시간 = "12:40";
+
+/* 
+
+
+
+
+
+*/
