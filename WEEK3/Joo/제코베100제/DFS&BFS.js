@@ -33,6 +33,7 @@ function dfs(graph, start) {
 
 console.log(dfs(graph, "E"));
 
+// 너비 우선 탐색
 function bfs(graph, start) {
   let 방문경로 = [];
   let queue = [start];
