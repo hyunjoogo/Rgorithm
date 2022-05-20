@@ -7,22 +7,18 @@ let time = 0;
 for (let i of value) {
   if (queue.length < frame) {
     if (!queue.includes(i)) {
-      console.log("miss");
       time += 6;
       queue.push(i);
     } else {
       time += 1;
-      console.log("hit");
     }
   } else {
     if (!queue.includes(i)) {
-      console.log("꽉찼고 없어서 얘 뺏어", queue.shift());
-      console.log("miss");
       time += 6;
+      queue.shift();
       queue.push(i);
     } else {
       time += 1;
-      console.log("hit");
     }
   }
   console.log(queue);
@@ -54,3 +50,17 @@ console.log(queue, time);
 
 // 2. 이것보다 더 좋은 방법은 없을까?
 // 딱히 생각이 안남!
+
+for (let i of value) {
+  if (queue.includes(i)) {
+    time += 1;
+  } else {
+    if (queue.length < frame) {
+      queue.push(i);
+    } else {
+      queue.shift();
+      queue.push(i);
+    }
+    time += 6;
+  }
+}
