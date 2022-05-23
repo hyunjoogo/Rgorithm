@@ -10,4 +10,7 @@ let cnt = 0;
 // + - 버튼만 눌러서 정답에 도달
 cnt = Math.abs(Number(target) - 100);
 
-console.log(cnt);
+// 금지된 버튼 제외하고 정답에 도달
+for (let i = 0; i < target.length; i++) {
+  if (target.includes())
+}
