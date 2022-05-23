@@ -1,6 +1,4 @@
 ## 탑100안에 코드 공개한 사람
 
-- hello70825
-- sr3gm
-
-- veydpz
+- rnaos1234
+- wizardrabbit
