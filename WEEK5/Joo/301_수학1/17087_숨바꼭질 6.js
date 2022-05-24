@@ -18,21 +18,34 @@ const locaitons = input[1]; // 동생들 위치
 // 동생들과의 차이
 const gapLocations = locaitons.map((value) => Math.abs(value - s));
 
-function gcd(a, b) {
+function getGCD(a, b) {
   if (a % b === 0) {
     return b;
   }
-  return gcd(b, a % b);
+  return getGCD(b, a % b);
 }
 
-let result = gcd(gapLocations[0], gapLocations[1]);
+// const getGCD = (a, b) => {
+//   let r;
+//   while (b) {
+//     console.log({ a, b, 나머지: r });
+//     r = a % b;
+//     a = b;
+//     b = r;
+//     console.log({ a, b, r });
+//   }
+//   return a;
+// };
+
+let result = getGCD(gapLocations[0], gapLocations[1]);
 
 if (n === 1) {
-  console.log(gapLocation[0]);
+  console.log(gapLocations[0]);
 } else if (n === 2) {
   console.log(result);
 } else {
   for (let i = 2; i < n; i++) {
-    console.log(gcd(result, gapLocations[i]));
+    result = getGCD(result, gapLocations[i]);
   }
+  console.log(result);
 }
