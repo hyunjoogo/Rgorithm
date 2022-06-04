@@ -46,3 +46,9 @@ function solution(id_list, report, k) {
 
   return answer;
 }
+
+console.log(
+  solution(["con", "ryan"], ["ryan con", "ryan con", "ryan con", "ryan con"], 3)
+);
+
+// 
