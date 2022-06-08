@@ -47,3 +47,4 @@ function solution(answers) {
 
 // 난 오브젝트까지 만들고 그랬는데 .....
 // 같이 풀어보면 좋은 문제 
+// // https://www.acmicpc.net/problem/1476
