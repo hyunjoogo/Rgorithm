@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/1476
+
 const fs = require("fs");
 const input = (
   process.platform === "linux"
