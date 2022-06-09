@@ -1,7 +1,7 @@
 function solution(numbers, hand) {
   var answer = "";
-  let nowLeft = "*";
-  let nowRight = "#";
+  let nowLeft = 10;
+  let nowRight = 11;
   const numberInfo = [
     [4, 2],
     [1, 1],
@@ -14,7 +14,7 @@ function solution(numbers, hand) {
     [3, 2],
     [3, 3],
     [4, 1],
-    [4, 3],
+    [4, 3], //
   ];
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] === 1 || numbers[i] === 4 || numbers[i] === 7) {
@@ -35,11 +35,6 @@ function solution(numbers, hand) {
       numbers[i] === 8 ||
       numbers[i] === 0
     ) {
-      if (nowLeft === "*") {
-        nowLeft = 10;
-      } else if (nowRight === "#") {
-        nowRight = 11;
-      }
       let leftDistance = Math.abs(
         Math.abs(numberInfo[nowLeft][0] - numberInfo[numbers[i]][0]) +
           Math.abs(numberInfo[nowLeft][1] - numberInfo[numbers[i]][1])
@@ -69,3 +64,5 @@ function solution(numbers, hand) {
 
   return answer;
 }
+
+console.log(solution([2, 8, 5, 0], "right"));
