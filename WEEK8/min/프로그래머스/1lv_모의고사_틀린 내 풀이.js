@@ -24,6 +24,8 @@ function solution(answers) {
     }
   }
 
+  
+
   // 3명중 많이 갖고 맞춘 사람수 구하는 로직
   if (firstCnt > secondCnt) {
     if (firstCnt > thirdCnt) {
