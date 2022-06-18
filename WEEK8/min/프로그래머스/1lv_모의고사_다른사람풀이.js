@@ -12,15 +12,15 @@ function solution(answers) {
       k = i - 10;
     }
 
-    if (answers[k] === firstSt[k]) {
+    if (answers[i] === firstSt[k]) {
       firstCnt += 1;
     }
 
-    if (answers[k] === secondSt[k]) {
+    if (answers[i] === secondSt[k]) {
       secondCnt += 1;
     }
 
-    if (answers[k] === thirdSt[k]) {
+    if (answers[i] === thirdSt[k]) {
       thirdCnt += 1;
     }
   }
