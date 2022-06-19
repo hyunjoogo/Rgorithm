@@ -34,21 +34,29 @@ function find1(n) {
 
 function solution(n) {
   var answer = 0;
-  let find = false
-  const nCountOne = countOne(n.toString(2))
-  let counter = 1
-  while(!find){
-      if(nCountOne === countOne((n+counter).toString(2))){
-          answer = n + counter
-          find = true
-      }
-      counter++
+  const nCountOne = count1(n.toString(2));
+  let counter = 1;
+
+  let flag = false;
+  while (!flag) {
+    if (nCountOne === find1((n + counter).toString(2))) {
+      answer = n + counter;
+      flag = true;
+    }
+    counter++;
   }
   return answer;
 }
-const countOne = (str) =>{
-  return str.split('').reduce((sum, currentChar) =>
-      currentChar === '1' ? sum += 1 : sum, 0)
+function count1(str) {
+  return str
+    .split("")
+    .reduce((sum, currentChar) => (currentChar === "1" ? (sum += 1) : sum), 0);
 }
 
-//
+// 1. n을 직접 건드리지 않았다.
+// - counter라는 변수를 만들어서 n은 보존하고 counter만 올리도록 함
+// 2. 1의 갯수를 찾는 함수
+// - 난 reduce를 사용함
+// 3. while문의 로직
+// - 내부 로직을 돌기전에 조건에 만족하면 종료가 되고
+// - 만족하지 못하면 counter++를 해주는 형식으로 함
