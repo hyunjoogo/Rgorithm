@@ -74,4 +74,40 @@ function solution(msg) {
 
 const msg = "KAKAO";
 //  'TOBEORNOTTOBEORTOBEORNOT'
-solution(msg);
+// solution(msg);
+
+// -----------------------------------------
+const dictionary = {};
+let count = 1;
+for (let i = 1; i <= 26; i++) {
+  dictionary[String.fromCharCode(65 + i - 1)] = i;
+  count = i;
+}
+
+function sol(msg) {
+  let answer = [];
+  for (let i = 0; i < msg.length; i) {
+    let w = msg[i];
+    let c = msg[i + 1];
+    let newW = add(msg, i, w, c, 0);
+    // 반환된 문자 w의 색인 번호를 추가하고
+    // w의 길이만큼 건너뛰도록 i에 크기를 더한다
+    answer.push(dictionary[newW]);
+    i += newW.length;
+  }
+  return answer;
+}
+function add(msg, i, w, c, cnt) {
+  // w+c가 사전에 있으면 그다음 단어를 붙어 다시 확인하고
+  // w+c가 사전에 없으면 사전에 추가하고 문자 w를 반환한다
+  if (dictionary[w + c] === undefined) {
+    dictionary[w + c] = count++;
+    return w;
+  } else {
+    cnt++;
+    let newW = w + c;
+    let newC = msg[i + 1 + cnt];
+    return add(msg, i, newW, newC, cnt);
+  }
+}
+sol(msg);
