@@ -74,19 +74,14 @@ function solution(word) {
   return answer;
 }
 
-function findIndex(str, keyboard) {
-  let strArr = [];
-  if (!includeArr(str)) {
-    return -1;
-  }
+function searchIndex(str) {
+  let resultArr = [];
   for (let i = 0; i < keyboard.length; i++) {
-    for (let j = 0; j < keyboard[i].length; j++) {
-      if (keyboard[i][j] === str) {
-        strArr.push([i, j]);
-      }
+    if (keyboard[i].includes(str)) {
+      resultArr.push([i, keyboard[i].indexOf(str)]);
     }
   }
-  return strArr;
+  return resultArr;
 }
 
 function includeArr(word) {
