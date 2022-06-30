@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <title>프로그래머스 기출</title>
+  <style>
+    hr {
+      width: 100%;
+    }
+
+    #list {
+      width: 100%;
+      column-count: 3;
+    }
+  </style>
+</head>
+<body>
+<h1>
+  <a href="https://programmers.co.kr/learn/challenges" target="_blank">
+    카카오 기출문제 LV2모음
+  </a>
+</h1>
+<p>좋은 회사는 좋은 연봉을 준다!</p>
+<ol id="list" type="1">
+</ol>
+
+<script>
+  const list = document.getElementById("list");
+  const listArray = [
+    {name: "문자열 압축", num: 60057},
+    {name: "오픈채팅방", num: 60057},
+    {name: "메뉴 리뉴얼", num: 60057},
+    {name: "괄호 변환", num: 60058},
+    {name: "[1차] 뉴스 클러스터링", num: 17677},
+    {name: "거리두기 확인하기", num: 81302},
+    {name: "수식 최대화", num: 67257},
+    {name: "튜플", num: 64065},
+    {name: "순위 검색", num: 72412},
+    {name: "후보키", num: 42890},
+    {name: "[1차] 프렌즈4블록", num: 17679},
+    {name: "[1차] 캐시", num: 17680},
+    {name: "[3차] 방금그곡", num: 17683},
+    {name: "[3차] 압축", num: 17684},
+    {name: "[3차] 파일명 정렬", num: 17686},
+    {name: "[3차] n진수 게임", num: 17687},
+    {name: "k진수에서 소수 개수 구하기", num: 92335},
+    {name: "주차 요금 계산", num: 92341},
+    {name: "양궁대회", num: 92342},
+  ];
+
+  listArray.forEach(value => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.setAttribute('href', `https://programmers.co.kr/learn/courses/30/lessons/${value.num}`);
+    a.setAttribute('target', '_blank');
+    a.innerText = `LV2-${value.name}`;
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+</script>
+</body>
+</html>
