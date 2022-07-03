@@ -93,9 +93,32 @@ function flatten(arr) {
     } else {
       newArr.push(arr[i])
     }
-  
+
   }
 return newArr;
 }
 
 console.log(flatten([1, 2, 3, [4, 5]]));
+
+
+function capitalizeFirst (array) {
+  if (array.length === 1) {
+    let str = ''
+    for (let i = 0; i < array[0].length; i++) {
+      if (i ===0) {
+        str += array[0][i].toUpperCase()
+
+      } else {
+        str += array[0][i].toLowerCase()
+      }
+    }
+    return [str];
+  }
+
+  let res = capitalizeFirst(array.slice(0, -1));
+  console.log('res', res);
+  res.push(array.slice(array.length-1)[0]);
+  return res;
+}
+console.clear()
+console.log(capitalizeFirst(['car','taco','banana']));
