@@ -27,3 +27,5 @@ function verifiedSlices(str) {
   }
   return result;
 }
+
+// 이번주는 쉬어가는 타임
