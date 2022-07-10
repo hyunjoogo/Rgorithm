@@ -2,7 +2,7 @@ function solution(str1, str2) {
   console.log(str1, str2);
   const str1Arr = makeSet(str1);
   const str2Arr = makeSet(str2);
-  const target = [...str2Arr];
+  let target = [...str2Arr];
   if (str1Arr.length === 0 && str2Arr.length === 0) {
     return 65536;
   }
@@ -17,7 +17,9 @@ function solution(str1, str2) {
       if (str1Arr[i] === str2Arr[j]) {
         intersection.push(str1Arr[i]);
         union.push(str1Arr[i]);
-        target.splice(j, 1);
+        let targetIndex = target.findIndex((value) => value === str1Arr[i]);
+        target.splice(targetIndex, 1);
+
         flag = true;
         break;
       }
@@ -41,11 +43,20 @@ function solution(str1, str2) {
 - 있어 > 교집합에 넣어, 합집합에 넣어, 대상에서 지워, 멈춰
 - 다 돌았는데 없어 > 합집합에 넣어, 대상에서 지워
 
-{FR, RE, EN, NC, CH}, 
-{ RA, AN, CE}, 
+[
+  'ha', 'an', 'nd',
+  'ds', 'sh', 'ha',
+  'ak', 'ke'
+] [
+  'sh', 'ha', 'ak',
+  'ke', 'ha', 'an',
+  'nd', 'ds'
+]
 
-- 교집합 : fr, nc
-- 합집합 : fr, re , en , nc, ch, ... B 집합
+[ 'ak','ke', 'ha']
+
+교집합 ha, an, nd, ds, sh
+합집합 ha, an, nd, ds, sh
 
 모든 for문 종료
 - 합집합에 나머지 대상들 넣어
@@ -79,4 +90,4 @@ const test = [
   ["abcd", "abcfg"],
 ];
 
-solution(test[1][0], test[1][1]);
+solution(test[2][0], test[2][1]);
