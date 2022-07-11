@@ -53,34 +53,41 @@ class SinglyLinkedLists {
       this.tail = null;
     }
     return current;
-    /*
-    *     let current = this.head;
-    while(current.next !== this.tail) {
-      console.log(current)
-      current = current.next
-    }
-    console.log('끝에서 두번째 노드',current)
-    let temp = current.next;
-    console.log(temp);
-    current.next = null
-    this.tail = current
-    // 이거의 next는 리턴해주고
-    // 이거의 next = null
-    // 그리고 this.head의 tail을 지금 current로
-    this.length--;
-    console.log(this);
-    return temp
-    *
-    * */
   }
 
+  shift() {
+    if (this.length === 0) return undefined;
+    let currentHead = this.head; // 현재 헤드
+    this.head = currentHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return currentHead;
+  }
+  unshift(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    }
+    else {
+      newNode.next = this.head
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  get() {
+    
+  }
 }
 
 const list = new SinglyLinkedLists();
 list.push('hello');
 list.push('there');
 list.push('!');
-list.pop();
-list.pop();
-list.pop();
+list.unshift('welcome')
+console.log(list.shift());
+
 console.log(list);
