@@ -65,21 +65,34 @@ class SinglyLinkedLists {
     }
     return currentHead;
   }
+
   unshift(value) {
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
-    }
-    else {
-      newNode.next = this.head
+    } else {
+      newNode.next = this.head;
       this.head = newNode;
     }
     this.length++;
     return this;
   }
-  get() {
-    
+
+  get(index) {
+    // 엣지케이스 : 인덱스 범위가 초과일때?
+    // - 인덱스가 음수이거나 혹은 리스트의 길이보다 같거나 클 경우 동작 안됨
+    // - null 또는 undefined 반환
+    if (index >= this.length || index < 0) return null;
+
+    let counter = 0;
+    let current = this.head;
+    while (index !== counter) {
+      current = current.next;
+      counter++;
+    }
+    console.log(current.value);
+    return current.value;
   }
 }
 
@@ -87,7 +100,7 @@ const list = new SinglyLinkedLists();
 list.push('hello');
 list.push('there');
 list.push('!');
-list.unshift('welcome')
-console.log(list.shift());
+console.log(list.get(0));
+
 
 console.log(list);
