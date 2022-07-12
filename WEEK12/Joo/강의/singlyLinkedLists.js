@@ -103,13 +103,79 @@ class SinglyLinkedLists {
     }
     return false;
   }
+
+  insert(index, value) {
+    // 길이가 같을 경우 맨 마지막에 삽입되어야 하기엔 index보다 작을 경우이다.
+    if (index > this.length || index < 0) return false;
+    if (index === 0) {
+      this.unshift(value);
+      return true;
+    }
+    if (index === this.length) {
+      this.push(value);
+      return true;
+    }
+
+    // 이전 노드의 next가 새롭게 생성된 후 삽입되는 노드를 가리키도록 설정
+    let prev = this.get(index - 1);
+    const newNode = new Node(value);
+    let temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+
+    this.length++;
+    return this;
+  }
+
+  remove(index) {
+    if (index >= this.length || index < 0) return null;
+    if (index === 0) {
+      this.shift();
+      return this;
+    }
+    if (index === this.length - 1) {
+      this.pop();
+      return this;
+    }
+    let previousNode = this.get(index - 1);
+    let removed = previousNode.next;
+    previousNode.next = removed.next;
+    this.length--;
+    return this;
+  }
+
+  print() {
+    const arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.value);
+      current = current.next;
+    }
+    console.log(arr);
+  }
+
+  reverse() {
+    // let node = this.head;
+    // this.head = this.tail;
+    // this.tail = node;
+    // let next;
+    // let prev = null;
+    //
+    // for (let i = 0; i < this.length; i++) {
+    //   next = node.next;
+    //   node.next = prev;
+    // }
+    //
+    // return this;
+  }
 }
 
 const list = new SinglyLinkedLists();
-list.push('hello');
-list.push('there');
-list.push('!');
-console.log(list.set(2, 'nice'));
+list.push(100);
+list.push(200);
+list.push(300);
+console.log(list.reverse());
+list.print();
 
 
-console.log(list);
+// console.log(list);
