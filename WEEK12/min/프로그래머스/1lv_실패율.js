@@ -12,34 +12,9 @@ function solution(N, stages) {
         }
       }
     }
-    failedRate.push([cntA / cntB, i]);
+    failedRate.push([i, cntA / cntB]);
   }
-
-  let usedArr = new Array(failedRate.length).fill(0);
-
-  for (let h = 0; h < N; h++) {
-    let max = [-1, -1];
-    let idx = -1;
-    for (let i = 0; i < failedRate.length; i++) {
-      if (failedRate[i][0] > max[0]) {
-        if (usedArr[i] === 0) {
-          max = failedRate[i];
-          idx = i;
-        }
-      } else if (failedRate[i][0] === max) {
-        if (failedRate[i][1] < max[1]) {
-          if (usedArr[i] === 0) {
-            max = failedRate[i];
-            idx = i;
-          }
-        }
-      }
-    }
-    usedArr[idx] = 1;
-    answer.push(max[1]);
-  }
-
+  failedRate.sort((a, b) => b[1] - a[1]);
+  failedRate.forEach((item) => answer.push(item[0]));
   return answer;
 }
-
-// 내풀이다.
