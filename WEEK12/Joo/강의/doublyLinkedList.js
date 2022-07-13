@@ -37,6 +37,7 @@ class DoublyLinkedList {
     return this;
   }
 
+
   pop() {
     if (!this.head) return undefined;
     // Store the current tail in a variable to return later
@@ -59,7 +60,6 @@ class DoublyLinkedList {
     return poppedNode;
   }
 
-
   shift() {
     if (this.length === 0) return undefined;
     // Store the current head property in variable
@@ -70,23 +70,115 @@ class DoublyLinkedList {
       this.tail = null;
     } else {
       // Update the head to be the next of the old head
-      this.head = oldHead.next;
+      this.head = this.head.next;
+
       // Set the head's prev property to null
       this.head.prev = null;
       // Set the old head's next to null
       oldHead.next = null;
+      // Decrement the length
+      this.length--;
     }
-    // Decrement the length
-    this.length--;
-    // Return the value removed
     return oldHead
   }
+  unshift(value) {
+    // Create a new node with the value passed to the function
+    const newNode = new Node(value);
+    // If the length is 0
+    if (!this.head) {
+      // Set the head and the tail to be the newNode
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      // Set the previous on the head of the list to be the new node
+      this.head.prev = newNode;
+      // Set the next on the new node to be the head property.
+      newNode.next = this.head;
+      // Update the head to list to be the new node
+      this.head = newNode;
+    }
+    // Increment the length.
+    this.length++;
+    // Return the list.
+    return this;
+  }
+  get(index) {
+    // If the index is less than 0 or greater or equal to the length, return null.
+    if (index < 0 || index >= this.length) return null;
+    // If the index is less than or equal to half the length of the list,
+    if (this.length / 2 >= index) {
+      // Loop through the list starting from the head and loop towards the middle.
+      let count = 0;
+      let currentNode = this.head;
+      while(count !== index) {
+        currentNode = currentNode.next
+        count++;
+      }
+      // Return the node once it is found
+      return currentNode;
+    }
+    // If the index is greater than half the length of the list,
+    else {
+      // Loop through the list staring from the tail and loop towards the middle.
+      let count = this.length - 1;
+      let currentNode = this.tail;
+      while(count !== index) {
+        currentNode = currentNode.prev
+        count--;
+      }
+      // Retrun the node once it is found.
+      return currentNode;
+    }
+  }
+  set(index, value) {
+    let foundNode = this.get(index);
+    if (foundNode !== null) {
+      foundNode.value = value;
+      return true;
+    }
+    return false
+  }
 
+  insert(index, value) {
+    // If the index is less than 0 or greater or equal to the length, return null.
+    if (index < 0 || index > this.length) return false;
+    if (index === 0 ) return !!this.unshift(value);
+    if (index === this.length) return !!this.push(value);
+
+    const newNode = new Node(value);
+    let beforeNode = this.get(index -1);
+    let afterNode = beforeNode.next;
+
+    beforeNode.next = newNode, newNode.prev = beforeNode;
+    newNode.next = afterNode, afterNode.prev = newNode;
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return false;
+
+    if (index === 0 ) return !!this.shift();
+    if (index === this.length - 1) return !!this.pop();
+
+    let removeNode = this.get(index);
+    let beforeNode = removeNode.prev;
+    let afterNode = removeNode.next;
+
+    beforeNode.next = afterNode, afterNode.prev = beforeNode;
+    removeNode.next = null, removeNode.prev = null;
+    this.length--;
+    return this;
+  }
 }
 
 const list = new DoublyLinkedList();
 list.push(100);
 list.push(101);
-console.log(list);
+list.push(102);
+list.push(103);
+list.push(104);
+list.remove(1);
+
 
 
