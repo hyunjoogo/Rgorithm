@@ -39,7 +39,7 @@ class BinarySearchTree {
           return this;
         }
         current = current.left; // left에 있는 노드로 다시 while문 시작
-      } else if (value < current.right) {
+      } else if (value < current.value) {
         if (current.right === null) {
           current.right = newNode;
           return this;
