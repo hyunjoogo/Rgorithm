@@ -42,7 +42,6 @@ class BinarySearchTree {
     queue.push(node);
     while (queue.length) {
       node = queue.shift();
-      console.log(node.value);
       data.push(node);
       if (node.left) queue.push(node.left);
       if (node.right) queue.push(node.right);
