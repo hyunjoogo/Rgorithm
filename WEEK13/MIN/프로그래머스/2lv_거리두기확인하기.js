@@ -59,74 +59,49 @@ function isDistance(place, i, j) {
 
   // 대각선 판단
 
-  if (i >= 1 && j >= 1) {
-    if (place[i + 1][j + 1] === "P") {
-      if (place[i + 1][j] === "X" && place[i][j + 1] === "X") {
-        return true;
-      } else {
-        return false;
-      }
-    }
-    console.log(place[i - 1][j - 1]);
-    if (place[i - 1][j - 1] === "P") {
-      if (place[i - 1][j] === "X" && place[i][j - 1] === "X") {
-        return true;
-      } else {
-        return false;
-      }
-    }
-    if (place[i + 1][j - 1] === "P") {
+  // 오른쪽 위 판단
+  if (place[i - 1]) {
+    if (place[i - 1][j + 1] && place[i - 1][j + 1] === "P") {
       if (place[i - 1][j] === "X" && place[i][j + 1] === "X") {
         return true;
       } else {
         return false;
       }
     }
-    if (place[i - 1][j + 1] === "P") {
+  }
+
+  // 오른쪽 아래 판단
+  if (place[i + 1]) {
+    if (place[i + 1][j + 1] && place[i + 1][j + 1] === "P") {
+      if (place[i + 1][j] === "X" && place[i][j + 1] === "X") {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  // 왼쪽 위 판단
+  if (place[i - 1]) {
+    if (place[i - 1][j - 1] && place[i - 1][j - 1] === "P") {
+      if (place[i - 1][j] === "X" && place[i][j - 1] === "X") {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  // 왼쪽 아래 판단
+  if (place[i + 1]) {
+    if (place[i + 1][j - 1] && place[i + 1][j - 1] === "P") {
       if (place[i + 1][j] === "X" && place[i][j - 1] === "X") {
         return true;
       } else {
         return false;
       }
     }
-  } else {
-    if (i === 0 && j === 0) {
-      if (place[i + 1][j + 1] === "X") {
-        return true;
-      } else {
-        return false;
-      }
-    } else if (i === 0) {
-      if (place[i + 1][j + 1] === "P") {
-        if (place[i + 1][j] === "X" && place[i][j + 1] === "X") {
-          return true;
-        } else {
-          return false;
-        }
-      }
-      if (place[i + 1][j - 1] === "P") {
-        if (place[i - 1][j] === "X" && place[i][j + 1] === "X") {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    } else if (j === 0) {
-      if (place[i + 1][j + 1] === "P") {
-        if (place[i + 1][j] === "X" && place[i][j + 1] === "X") {
-          return true;
-        } else {
-          return false;
-        }
-      }
-      if (place[i - 1][j + 1] === "P") {
-        if (place[i + 1][j] === "X" && place[i][j - 1] === "X") {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    }
   }
+
   return true;
 }
