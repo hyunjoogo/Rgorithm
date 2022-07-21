@@ -1,14 +1,11 @@
-// 값을 저장하는 배열에 맨 뒤에 push를 한 다음
-// 버블업
-
-
-class MaxBinaryHeap {
+class PriorityQueue{
   constructor() {
-    this.values = [41, 39, 33, 18, 27, 12];
+    this.values = [];
   }
 
-  insert(element) {
-    this.values.push(element);
+  enqueue(value, priority) {
+    const newNode = new Node(value, priority);
+    this.values.push(newNode)
     this.bubbleUp();
   }
 
@@ -19,16 +16,13 @@ class MaxBinaryHeap {
     while (idx > 0) {
       let parentIndex = Math.floor((idx - 1) / 2);
       let parent = this.values[parentIndex];
-      if (element <= parent) break;
+      if (element.priority >= parent.priority) break;
       this.values[parentIndex] = element;
       this.values[idx] = parent;
       idx = parentIndex;
     }
   }
-
-  extractMax() {
-    //Swap the first value in the values property with the last one
-    // Pop from the values property, so you can return the value at the end;
+  dequeue() {
     const max = this.values[0];
     const end = this.values.pop();
     if (this.values.length > 0) {
@@ -36,7 +30,9 @@ class MaxBinaryHeap {
       this.sinkDown();
     }
     return max;
+
   }
+
 
   sinkDown() {
     let idx = 0;
@@ -51,13 +47,14 @@ class MaxBinaryHeap {
       let swap = null;
       if (leftChildIndex < length) {
         leftChild = this.values[leftChildIndex];
-        if (leftChild > element) {
+        if (leftChild.priority > element) {
           swap = leftChildIndex;
         }
       }
       if (rightChildIndex < length) {
         rightChild = this.values[rightChildIndex];
-        if ((swap === null && rightChild > element) || (swap !== null && rightChild > leftChild)) {
+        if ((swap === null && rightChild.priority > element) ||
+          (swap !== null && rightChild.priority > leftChild)) {
           swap = rightChildIndex;
         }
       }
@@ -68,7 +65,9 @@ class MaxBinaryHeap {
   }
 }
 
-const h = new MaxBinaryHeap();
-h.extractMax();
-
-
+class Node {
+  constructor(value, priority) {
+    this.value = value;
+    this.priority = priority;
+  }
+}
