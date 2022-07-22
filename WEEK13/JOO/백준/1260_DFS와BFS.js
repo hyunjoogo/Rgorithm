@@ -25,29 +25,18 @@ for (let [a, b] of arr) {
   graph[a][b] = 1;
   graph[b][a] = 1;
 }
-let answer = []
+let visited = new Array(n + 1).fill(false);
+let list = []
 
 function DFS(node) {
-  let visited = new Array(n + 1).fill(false);
-  let stack = []
-  stack.push(node);
-  while(stack.length > 0) {
-    let cur = stack.pop();
-
-    if (!visited[cur]) {
-      visited[cur] = true;
-answer.push(cur)
-
-      for (let next = cur; next <= n; next++) {
-
-        if (!visited[next] && graph[cur][next])
-          stack.push(next);
-        console.log(cur, next, stack);
-      }
+  visited[node] = true;
+  list.push(node);
+  for (let i = 1; i < graph.length; i++) {
+    if (graph[node][i] === 1 && visited[i] === false) {
+      DFS(i);
     }
-
   }
 }
 
 DFS(v);
-console.log(answer);
+console.log(list);
