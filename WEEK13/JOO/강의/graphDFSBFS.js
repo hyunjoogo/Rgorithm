@@ -31,14 +31,58 @@ class Graph {
       results.push(vertex);
       adjacencyList[vertex].forEach(neighbor => {
         if (!visited[neighbor]) {
-          return dfs(neighbor)
+          return dfs(neighbor);
         }
       });
     })(start);
+    return results;
+  }
+
+  DFSIterative(start) {
+    const stack = [start];
+    let results = [];
+    let visited = {};
+    let currentVertex;
+
+
+    visited[start] = true;
+    while (stack.length) {
+      currentVertex = stack.pop();
+      results.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+    return results;
+  }
+
+  BFS(start) {
+    const queue = [start];
+    const results = [];
+    const visited = {};
+    visited[start] = true
+    let currentVertex
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+      results.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
     return results;
   }
 }
 
 const g = new Graph();
 console.log(g.DFSRecursive('A'));
+console.log(g.DFSIterative('A'));
+console.log(g.BFS('A'));
 
