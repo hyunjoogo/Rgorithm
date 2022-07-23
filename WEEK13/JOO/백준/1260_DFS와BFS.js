@@ -2,41 +2,85 @@ const fs = require("fs");
 const input = (
   process.platform === "linux"
     ? fs.readFileSync("/dev/stdin").toString()
-    : `4 5 1
-    1 2
-    1 3
-    1 4
-    2 4
-    3 4`
+    : `5 5 3
+5 4
+5 2
+1 2
+3 4
+3 1`
 )
   .trim()
   .split("\n")
   .map((v) => v.trim());
 
+const [n, m, v] = input.shift().split(" ").map(v => +v);
+const edges = input.map(v => v.split(" ").map(Number));
+const graph = {}
+edges.forEach(([from, to]) => {
+  if (!graph[from]) graph[from] = [];
+  if (!graph[to]) graph[to] = [];
+  graph[from].push(to);
+  graph[to].push(from);
+})
 
-// n => 정점, m => 간선
-const [n, m, v] = input[0].split(" ").map((v) => +v);
-let graph = Array.from(Array(n + 1), () => Array(n + 1).fill(0));
-const arr = [];
-for (let i = 1; i < input.length; i++) {
-  arr.push(input[i].split(' '));
-}
-for (let [a, b] of arr) {
-  graph[a][b] = 1;
-  graph[b][a] = 1;
-}
-let visited = new Array(n + 1).fill(false);
-let list = []
 
-function DFS(node) {
-  visited[node] = true;
-  list.push(node);
-  for (let i = 1; i < graph.length; i++) {
-    if (graph[node][i] === 1 && visited[i] === false) {
-      DFS(i);
-    }
+function DFS(start) {
+  const stack = [start];
+  const results = [];
+  const visited = {};
+  visited[start] = true;
+  let currentVertex;
+  while (stack.length) {
+    currentVertex = stack.pop();
+    results.push(currentVertex);
+    graph[currentVertex].forEach(neighbor => {
+      if (!visited[neighbor]) {
+        visited[neighbor] = true;
+        stack.push(neighbor);
+      }
+    });
   }
+  return results;
+  // const results = [];
+  // const visited = {};
+  //
+  // function dfs(vertex) {
+  //   if (!vertex) return null;
+  //   visited[vertex] = true;
+  //   results.push(vertex);
+  //
+  //   graph[vertex].forEach(neighbor => {
+  //     if (!visited[neighbor]) {
+  //       dfs(neighbor);
+  //     }
+  //   });
+  // }
+  //
+  // dfs(start);
+  // return results;
+
 }
 
-DFS(v);
-console.log(list);
+function BFS(start) {
+  const queue = [start];
+  const results = [];
+  const visited = {};
+  visited[start] = true;
+  let currentVertex;
+  while (queue.length) {
+    currentVertex = queue.shift();
+    results.push(currentVertex);
+    graph[currentVertex].forEach(neighbor => {
+      if (!visited[neighbor]) {
+        visited[neighbor] = true;
+        queue.push(neighbor);
+      }
+    });
+  }
+  return results;
+}
+
+Object.keys(graph).forEach(v => graph[v].sort((a,b)=> b-a))
+console.log(DFS(v).join(" "));
+Object.keys(graph).forEach(v => graph[v].sort((a,b)=> b-a))
+console.log(BFS(v).join(" "));

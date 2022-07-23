@@ -1,12 +1,10 @@
 class Graph {
   constructor() {
     this.adjacencyList = {
-      "A": ["B", "C"],
-      "B": ["A", "D"],
-      "C": ["A", "E"],
-      "D": ["B", "E", "F"],
-      "E": ["C", "D", "F"],
-      "F": ["D", "E"]
+      1: [2, 3, 4],
+      2: [1, 4],
+      3: [1, 4],
+      4: [1, 2, 3],
     };
   }
 
@@ -64,8 +62,8 @@ class Graph {
     const queue = [start];
     const results = [];
     const visited = {};
-    visited[start] = true
-    let currentVertex
+    visited[start] = true;
+    let currentVertex;
 
     while (queue.length) {
       currentVertex = queue.shift();
@@ -82,7 +80,7 @@ class Graph {
 }
 
 const g = new Graph();
-console.log(g.DFSRecursive('A'));
-console.log(g.DFSIterative('A'));
-console.log(g.BFS('A'));
+console.log(g.DFSRecursive(1));
+console.log(g.DFSIterative(1));
+console.log(g.BFS(1));
 
