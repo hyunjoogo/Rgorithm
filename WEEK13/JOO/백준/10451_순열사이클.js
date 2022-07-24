@@ -24,7 +24,7 @@ while (testNum--) {
     if (!graph[i + 1]) graph[i + 1] = [];
     graph[i + 1] = list[i];
   }
-  
+
   function search(start) {
     function cycle(value) {
       if (graph[value] === start) return delete graph[value];
