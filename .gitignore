@@ -1,2 +1,4 @@
-
+.idea/
+.vscode
+.idea/runConfigurations.xml
 .idea/misc.xml
