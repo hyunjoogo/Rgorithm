@@ -29,7 +29,22 @@ class Solution:
             if 0 <= nr < len(grid) and 0 <=nc <len(grid[0]) and grid[nr][nc] == "1":
                 self.dfs(grid, nr, nc)
 
+# 상하좌우 다른 방법으로 
+class Solution(object):
+    def floodFill(self, image, sr, sc, newColor):
+        R, C = len(image), len(image[0])
+        color = image[sr][sc]
+        if color == newColor: return image
+        def dfs(r, c):
+            if image[r][c] == color:
+                image[r][c] = newColor
+                if r >= 1: dfs(r-1, c) # 상
+                if r+1 < R: dfs(r+1, c) # 하
+                if c >= 1: dfs(r, c-1) # 좌
+                if c+1 < C: dfs(r, c+1) # 우
 
+        dfs(sr, sc)
+        return image
 
 '''
 1. 손도 못 댔다.
