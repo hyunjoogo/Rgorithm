@@ -1,5 +1,3 @@
-from lib2to3.pytree import Node
-
 
 def inOrderTraversal(root) : 
   visited = []
