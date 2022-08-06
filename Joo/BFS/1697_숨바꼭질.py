@@ -4,6 +4,7 @@ n, k = map(int, input().split())
 max = 10 ** 5
 depth = [0] * (max + 1)
 
+
 def bfs():
   q = deque()
   q.append(n)
